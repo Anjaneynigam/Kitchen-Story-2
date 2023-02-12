@@ -1,0 +1,100 @@
+<app-search></app-search>
+<app-tags></app-tags>
+<app-not-found [visible]="!foods || foods.length <=0" resetLinkText="Wrong Input"></app-not-found>
+<ul>
+    <li *ngFor="let food of foods">
+        <a routerLink="/food/{{food.id}}">
+            <img src="{{food.imageUrl}}" alt="food images">
+            <div class="content">
+                <div class="name">
+                    {{food.name}}
+                </div>
+                <span class="favorite {{food.favorite?'':'not'}}">♥</span>
+            <div class="product-item-footer">
+                <div class="origins">
+                    <span *ngFor="let origin of food.origins">
+                        {{origin}}
+                    </span>
+                </div>
+                <div class="cook-time">
+                    <span>⏰</span>
+                    {{food.cookTime}}
+                </div>
+                <div class="price">
+                    {{food.price|currency}}
+                </div>
+            </div>
+                
+                    
+            </div>
+            
+        </a>
+    </li>
+</ul>
+<!-- reservation section start -->
+<div class="reservation" id="reservation">
+    <div class="image">    
+    </div>
+
+    <div class="form">
+        <h1 class="heading">book a table</h1>
+        <form>
+            <div class="form-holder">
+                <div>
+                    <select>
+                        <option>1 people</option>
+                        <option>2 people</option>
+                        <option>3 people</option>
+                        <option>4 people</option>
+                    </select>
+
+                    <input type="text" name="" placeholder="Time">
+                    <input type="text" name="" placeholder="Phone">
+                </div>
+
+                <div>
+                    <input type="text" name="" placeholder="Date">
+                    <input type="text" name="" placeholder="Name">
+                    <input type="email" name="" placeholder="email">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">BookNow</button>
+        </form>
+    </div>
+</div>
+<!-- reservation section ends -->
+
+<!-- footer section start -->
+<section class="footer">
+    <div class="container">
+        <div>
+            <h3>ABOUT US</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+        </div>
+
+        <div>
+            <h3>GET NEWS & OFFERS</h3>
+            <input type="email" name="" placeholder="enter your email">
+            <ul>
+                <li><i class="fa-brands fa-twitter"></i></li>
+                <li><i class="fa-brands fa-instagram"></i></li>
+                <li><i class="fa-brands fa-whatsapp"></i></li>
+                <li><i class="fa-brands fa-linkedin-in"></i></li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>CONTACT US</h3>
+            <span>Nitya's Food Corner!</span>
+            <span>+ (91) 8146115525</span>
+            <span>anjaneyfsd@gmail.com</span>
+            <span>www.nityafoodcorner.in</span>
+        </div>
+    </div>
+
+    <p>&copy;2022 Reserved by Nigam & Co.</p>
+</section>
+<!-- footer section end -->
+
+
+

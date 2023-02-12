@@ -1,0 +1,23 @@
+<h2>Menu List</h2>
+<table class="table table-stripes">
+    <thead>
+        <tr>
+            <th> Dish Name</th>
+            <th> Price</th>
+            <th> Image Url</th>
+            <th> Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor= "let menu of menu">
+            <td> {{menu.dishName}} </td>
+            <td> {{menu.price}} </td>
+            <td> {{menu.imageUrl}} </td>
+            <td>
+                <button (click) = "updateMenu(menu.id)" class="btn btn-info">Update</button>
+                <button (click) = "deleteMenu(menu.id)" class="btn btn-danger" style="margin-left: 10px;">Delete</button>
+                <button (click) = "menuDetails(menu.id)" class="btn btn-info" style="margin-left: 10px;">View</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
